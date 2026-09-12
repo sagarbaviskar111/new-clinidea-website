@@ -1,0 +1,66 @@
+/* Clinidea portal system: shared with the public site's navy, teal and gold palette. */
+.clinidea-auth { --portal-accent:#0e7490; --portal-accent-soft:#ccfbf1; min-height:100vh; display:grid; grid-template-columns:minmax(360px, 1.08fr) minmax(480px, .92fr); background:#f7fbfc; color:#102a43; }
+.clinidea-auth--mentor { --portal-accent:#0f766e; --portal-accent-soft:#d1fae5; }
+.clinidea-auth--admin { --portal-accent:#b7791f; --portal-accent-soft:#fef3c7; }
+.clinidea-auth__brand { position:relative; overflow:hidden; isolation:isolate; display:flex; flex-direction:column; justify-content:space-between; min-height:100vh; padding:clamp(2rem,5vw,4.5rem); color:#fff; background:radial-gradient(circle at 80% 15%, rgba(20,184,166,.32), transparent 25rem), linear-gradient(145deg,#071d2e 0%,#0d3248 58%,#0e7490 150%); }
+.clinidea-auth--admin .clinidea-auth__brand { background:radial-gradient(circle at 80% 15%, rgba(251,191,36,.2), transparent 25rem), linear-gradient(145deg,#071d2e,#102a43 58%,#155e75 150%); }
+.clinidea-auth__brand::after { content:''; position:absolute; inset:0; z-index:-1; opacity:.3; background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px); background-size:42px 42px; mask-image:linear-gradient(135deg,#000,transparent 75%); }
+.clinidea-auth__logo { width:180px; border-radius:12px; background:#fff; padding:.55rem .8rem; display:block; box-shadow:0 14px 34px rgba(0,0,0,.18); }
+.clinidea-auth__logo img { display:block; width:100%; max-height:48px; object-fit:contain; }
+.clinidea-auth__brand-content { position:relative; z-index:1; max-width:570px; margin:clamp(3rem,8vh,7rem) 0 auto; }
+.clinidea-auth__eyebrow { color:var(--portal-accent); font-size:.73rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+.clinidea-auth__brand .clinidea-auth__eyebrow { color:#9ee8df; }
+.clinidea-auth__brand h1 { margin:1rem 0 1.25rem; color:#fff; font-size:clamp(2.4rem,4.2vw,4.6rem); line-height:1.05; max-width:10ch; }
+.clinidea-auth__brand p { max-width:500px; color:#d7e7ec; font-size:1.07rem; line-height:1.75; }
+.clinidea-auth__proofs { display:flex; gap:.7rem; flex-wrap:wrap; margin-top:2rem; }
+.clinidea-auth__proofs span { padding:.6rem .85rem; border:1px solid rgba(255,255,255,.2); border-radius:999px; background:rgba(255,255,255,.08); font-size:.83rem; font-weight:700; backdrop-filter:blur(8px); }
+.clinidea-auth__proofs i { color:#f9c65b; margin-right:.35rem; }
+.clinidea-auth__illustration { position:absolute; right:clamp(2rem,8vw,8rem); bottom:clamp(2rem,8vh,6rem); width:180px; height:180px; z-index:0; }
+.clinidea-auth__orb { position:absolute; border-radius:50%; filter:blur(1px); }
+.clinidea-auth__orb--one { inset:0; background:rgba(255,255,255,.1); }
+.clinidea-auth__orb--two { width:130px; height:130px; left:-55px; bottom:-55px; background:rgba(20,184,166,.38); }
+.clinidea-auth__symbol { position:absolute; inset:25px; display:grid; place-items:center; border:1px solid rgba(255,255,255,.26); border-radius:38px; background:rgba(255,255,255,.1); color:#fff; font-size:4rem; transform:rotate(-10deg); backdrop-filter:blur(10px); box-shadow:0 20px 50px rgba(0,0,0,.14); }
+.clinidea-auth__main { display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2rem; position:relative; }
+.clinidea-auth__back { position:absolute; top:2.3rem; left:clamp(1.5rem,5vw,4.5rem); color:#527180; font-size:.88rem; font-weight:700; text-decoration:none; }
+.clinidea-auth__back:hover { color:var(--portal-accent); }
+.clinidea-auth__back i { margin-right:.45rem; }
+.clinidea-auth__form-card { width:min(100%,460px); padding:clamp(1.8rem,4vw,3.1rem); background:#fff; border:1px solid #e4eef0; border-radius:24px; box-shadow:0 24px 70px rgba(15,42,67,.12); }
+.clinidea-auth__form-heading { margin-bottom:2rem; }
+.clinidea-auth__form-heading h2 { margin:.55rem 0 .6rem; color:#102a43; font-size:2rem; }
+.clinidea-auth__form-heading p { margin:0; color:#617985; font-size:.93rem; }
+.clinidea-auth__mobile-mark { display:none; }
+.login-form-wrapper .form-label { margin-bottom:.45rem; color:#28485a; font-size:.86rem; font-weight:800; }
+.login-form-wrapper .form-control { min-height:52px; padding:.75rem 1rem; border:1px solid #d8e5e9; border-radius:12px; background:#fbfdfd; color:#102a43; box-shadow:none; }
+.login-form-wrapper .form-control:focus { border-color:var(--portal-accent); background:#fff; box-shadow:0 0 0 4px rgba(14,116,144,.13); }
+.login-form-wrapper .form-control::placeholder { color:#9aaeb8; }
+.login-form-wrapper .alert { border:0; border-radius:12px; font-size:.9rem; }
+.clinidea-auth__submit { min-height:54px; border:0; border-radius:12px; color:#fff; font-size:.96rem; font-weight:800; background:linear-gradient(135deg,var(--portal-accent),#155e75); box-shadow:0 12px 22px rgba(14,116,144,.28); transition:transform .2s ease,box-shadow .2s ease; }
+.clinidea-auth--admin .clinidea-auth__submit { background:linear-gradient(135deg,#b7791f,#8a5a16); }
+.clinidea-auth__submit:hover:not(:disabled) { color:#fff; transform:translateY(-2px); box-shadow:0 16px 30px rgba(14,116,144,.35); }
+.login-form-wrapper a { color:var(--portal-accent); }
+.clinidea-auth__help { position:absolute; bottom:1.6rem; margin:0; color:#8499a3; font-size:.75rem; }
+.clinidea-auth__help i { color:var(--portal-accent); margin-right:.3rem; }
+
+/* Portal dashboard refinement */
+.admin-layout { background:linear-gradient(135deg,#f7fbfc,#eef7f8); }
+.admin-layout .admin-content { padding-top:2rem; }
+.admin-layout .card, .student-sidebar + .sidebar-margin-responsive .card { border-color:rgba(15,42,67,.08) !important; box-shadow:0 10px 30px rgba(15,42,67,.06) !important; }
+.student-sidebar { background:linear-gradient(180deg,#102a43,#163c5a) !important; border-right:0 !important; }
+.student-sidebar .text-dark, .student-sidebar .text-muted { color:#dcebf3 !important; }
+.student-sidebar .list-group-item { background:transparent !important; color:#dcebf3 !important; }
+.student-sidebar .list-group-item:hover { background:rgba(255,255,255,.1) !important; }
+.student-sidebar .bg-theme-secondary { background:linear-gradient(135deg,#0e7490,#14b8a6) !important; }
+.student-portal { background:linear-gradient(135deg,#f7fbfc,#edf7f8) !important; }
+.student-portal .sidebar-margin-responsive > .shadow-sm { box-shadow:0 6px 22px rgba(15,42,67,.06) !important; }
+.student-progress-overview { border:1px solid #dbe9eb; box-shadow:0 14px 36px rgba(15,42,67,.08); }
+.student-progress-overview .card-header { background:linear-gradient(90deg,#fff,#f2fbfa) !important; }
+.student-progress-overview .card-body { background:#f7fbfc !important; }
+.student-progress-overview .card-body > .row > div > div { border-color:#dce9ec !important; border-radius:16px !important; transition:transform .2s ease,box-shadow .2s ease; }
+.student-progress-overview .card-body > .row > div > div:hover { transform:translateY(-4px); box-shadow:0 12px 24px rgba(15,42,67,.09) !important; }
+.mentor-portal { background:linear-gradient(135deg,#f7fbfc,#eef7f8) !important; }
+.mentor-portal .batch-selection-card { border:1px solid #dce9ec !important; box-shadow:0 12px 34px rgba(15,42,67,.07) !important; transition:transform .2s ease, box-shadow .2s ease !important; }
+.mentor-portal .batch-selection-card:hover { transform:translateY(-6px); box-shadow:0 20px 42px rgba(15,42,67,.13) !important; }
+.mentor-portal .mentor-nav-btn { color:#c8dae1 !important; }
+.mentor-portal .mentor-nav-btn:hover { background:rgba(255,255,255,.1) !important; color:#fff !important; }
+@media (max-width:991px) { .clinidea-auth { grid-template-columns:1fr; } .clinidea-auth__brand { min-height:270px; padding:2rem; } .clinidea-auth__brand-content { margin:2rem 0 0; } .clinidea-auth__brand h1 { font-size:2.2rem; max-width:18ch; } .clinidea-auth__brand p,.clinidea-auth__proofs,.clinidea-auth__illustration { display:none; } .clinidea-auth__main { min-height:calc(100vh - 270px); padding:4.5rem 1.25rem 3.5rem; } .clinidea-auth__back { top:1.4rem; left:1.5rem; } .clinidea-auth__mobile-mark { display:grid; place-items:center; width:46px; height:46px; margin-bottom:1rem; border-radius:14px; background:var(--portal-accent-soft); color:var(--portal-accent); font-size:1.25rem; } }
+@media (max-width:575px) { .clinidea-auth__brand { min-height:215px; } .clinidea-auth__logo { width:150px; } .clinidea-auth__brand h1 { font-size:1.8rem; } .clinidea-auth__main { min-height:calc(100vh - 215px); padding-top:4rem; } .clinidea-auth__form-card { padding:1.5rem; border-radius:20px; } .clinidea-auth__form-heading h2 { font-size:1.7rem; } .clinidea-auth__help { bottom:1rem; } }
