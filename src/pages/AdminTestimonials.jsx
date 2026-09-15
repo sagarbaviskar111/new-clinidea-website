@@ -86,7 +86,7 @@ const AdminTestimonials = () => {
     if (imageFile) {
       const uploadUrl = `${BASE_URL}/api/admin/upload-image`;
       const filePayload = new FormData();
-      filePayload.append('image', imageFile);
+      filePayload.append('file', imageFile);
       try {
         const uploadRes = await fetch(uploadUrl, {
           method: 'POST',

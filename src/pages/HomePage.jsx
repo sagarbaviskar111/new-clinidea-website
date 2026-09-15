@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
-import "../../public/css/StudentSlider.css";
+import "../styles/StudentSlider.css";
 import { BASE_URL } from '../config';
 import EnquiryForm from '../components/EnquiryForm';
 import CourseCTAs from '../components/CourseCTAs';

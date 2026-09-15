@@ -104,7 +104,7 @@ const AdminBlogs = () => {
     if (imageFile) {
       setUploading(true);
       const fd = new FormData();
-      fd.append('image', imageFile);
+      fd.append('file', imageFile);
       try {
         const uploadRes = await fetch(`${BASE_URL}/api/admin/upload-image`, {
           method: 'POST',
