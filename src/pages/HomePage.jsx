@@ -464,7 +464,7 @@ const HomePage = () => {
 
       <div className="lazy-section"><TestimonialsSection /></div>
 
-      {studentImages.length > 0 && (
+      {/* {studentImages.length > 0 && (
         <section className="ftco-section bg-dark py-5">
           <div className="container">
 
@@ -504,7 +504,7 @@ const HomePage = () => {
 
           </div>
         </section>
-      )}
+      )} */}
     </div>
   );
 };
