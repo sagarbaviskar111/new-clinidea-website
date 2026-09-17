@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
-import "../styles/StudentSlider.css";
+import "../../public/css/StudentSlider.css";
 import { BASE_URL } from '../config';
 import EnquiryForm from '../components/EnquiryForm';
 import CourseCTAs from '../components/CourseCTAs';
@@ -464,7 +464,7 @@ const HomePage = () => {
 
       <div className="lazy-section"><TestimonialsSection /></div>
 
-      {studentImages.length > 0 && (
+      {/* {studentImages.length > 0 && (
         <section className="ftco-section bg-dark py-5">
           <div className="container">
 
@@ -504,7 +504,7 @@ const HomePage = () => {
 
           </div>
         </section>
-      )}
+      )} */}
     </div>
   );
 };
