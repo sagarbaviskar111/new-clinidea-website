@@ -40,7 +40,7 @@ const Contact = () => {
         <div className="col-lg-4 col-md-6 mb-4">
           <div className="card-premium p-4 text-center h-100 border-0" style={{ cursor: 'pointer' }} onClick={() => window.open('https://wa.me/918999213129', '_blank')}>
             <div className="mb-3 d-flex align-items-center justify-content-center mx-auto" style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: '#25D366', color: 'white', fontSize: '28px' }}>
-              <i className="fa fa-whatsapp"></i>
+              <i className="fab fa-whatsapp"></i>
             </div>
             <h4 className="font-weight-bold" style={{color: 'var(--color-primary)'}}>WhatsApp</h4>
             <p className="text-muted mb-2">Instant Chat Support</p>
@@ -80,13 +80,13 @@ const Contact = () => {
         <h3 className="font-weight-bold mb-4" style={{ color: 'var(--color-primary)' }}>Connect on Social Media</h3>
         <div className="d-flex justify-content-center flex-wrap" style={{ gap: '15px' }}>
           <a href="https://www.instagram.com/clinidea_education" target="_blank" className="btn btn-lg shadow-sm text-white" style={{ backgroundColor: '#E1306C', borderRadius: '30px', padding: '12px 30px', fontWeight: '600' }}>
-            <i className="fa fa-instagram mr-2"></i> Instagram
+            <i className="fab fa-instagram mr-2"></i> Instagram
           </a>
           <a href="https://www.linkedin.com/company/clinideaeducation" target="_blank" className="btn btn-lg shadow-sm text-white" style={{ backgroundColor: '#0077B5', borderRadius: '30px', padding: '12px 30px', fontWeight: '600' }}>
-            <i className="fa fa-linkedin mr-2"></i> LinkedIn
+            <i className="fab fa-linkedin mr-2"></i> LinkedIn
           </a>
           <a href="https://www.youtube.com/channel/UCVM8AaVYBdMiIpRyvsfcqZg" target="_blank" className="btn btn-lg shadow-sm text-white" style={{ backgroundColor: '#FF0000', borderRadius: '30px', padding: '12px 30px', fontWeight: '600' }}>
-            <i className="fa fa-youtube-play mr-2"></i> YouTube
+            <i className="fab fa-youtube mr-2"></i> YouTube
           </a>
         </div>
       </div>

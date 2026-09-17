@@ -98,7 +98,7 @@ const EnquiryForm = ({ initialCourse = '' }) => {
               window.open(`https://wa.me/918999213129?text=${text}`, '_blank');
             }}
           >
-            <i className="fa fa-whatsapp mr-2"></i> Chat with us on WhatsApp
+            <i className="fab fa-whatsapp mr-2"></i> Chat with us on WhatsApp
           </button>
           
           <div className="d-flex justify-content-center gap-3 w-100 mt-2">

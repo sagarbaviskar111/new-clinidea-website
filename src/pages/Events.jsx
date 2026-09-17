@@ -165,7 +165,7 @@ const Events = () => {
                       <div className="mt-auto d-flex flex-column gap-2">
                         {event.youtubeUrl && (
                           <a href={event.youtubeUrl} target="_blank" rel="noopener noreferrer" className="btn btn-outline-danger w-100 py-2 d-flex justify-content-center align-items-center" style={{ borderRadius: '8px', fontWeight: 'bold' }}>
-                            <span className="fa fa-youtube-play mr-2" style={{ fontSize: '1.2rem' }}></span> Watch Teaser
+                            <span className="fab fa-youtube mr-2" style={{ fontSize: '1.2rem' }}></span> Watch Teaser
                           </a>
                         )}
                         <div className="d-flex gap-2 mt-3">

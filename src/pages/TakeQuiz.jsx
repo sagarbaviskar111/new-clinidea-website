@@ -399,7 +399,7 @@ const TakeQuiz = () => {
                     onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
                     onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
                   >
-                    <i className="fa fa-whatsapp me-2" style={{ fontSize: '1.2rem' }}></i> Send to WhatsApp
+                    <i className="fab fa-whatsapp me-2" style={{ fontSize: '1.2rem' }}></i> Send to WhatsApp
                   </button>
                   <button 
                     className="btn text-white w-100 py-3 fw-bold rounded-pill" 

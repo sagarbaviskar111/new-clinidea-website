@@ -180,9 +180,9 @@ const Navbar = () => {
               <a href="tel:+918999213129"><i className="fa fa-phone"></i> +91 8999213129</a>
             </div>
             <div className="top-socials">
-              <a href="https://www.linkedin.com/company/clinideaeducation" target="_blank" rel="noreferrer"><i className="fa fa-linkedin"></i></a>
-              <a href="https://www.instagram.com/clinidea_education" target="_blank" rel="noreferrer"><i className="fa fa-instagram"></i></a>
-              <a href="https://www.youtube.com/channel/UCVM8AaVYBdMiIpRyvsfcqZg" target="_blank" rel="noreferrer"><i className="fa fa-youtube-play"></i></a>
+              <a href="https://www.linkedin.com/company/clinideaeducation" target="_blank" rel="noreferrer"><i className="fab fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/clinidea_education" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
+              <a href="https://www.youtube.com/channel/UCVM8AaVYBdMiIpRyvsfcqZg" target="_blank" rel="noreferrer"><i className="fab fa-youtube"></i></a>
             </div>
           </div>
         </div>

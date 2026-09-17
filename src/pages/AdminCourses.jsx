@@ -367,7 +367,7 @@ const AdminCourses = () => {
                           <td className="fw-bold text-dark">
                             {course.name}
                             <div className="mt-1">
-                              {course.youtubeUrl && <span className="badge bg-danger me-1" title="YouTube Video Attached"><i className="fa fa-youtube-play"></i> Video</span>}
+                              {course.youtubeUrl && <span className="badge bg-danger me-1" title="YouTube Video Attached"><i className="fab fa-youtube"></i> Video</span>}
                               {course.brochureUrl && <span className="badge bg-info" title="Brochure PDF Attached"><i className="fa fa-file-pdf-o"></i> Brochure</span>}
                             </div>
                           </td>

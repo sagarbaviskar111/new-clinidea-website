@@ -172,7 +172,7 @@ const FloatingContact = () => {
           className="dock-btn whatsapp" 
           data-tooltip="WhatsApp Us"
         >
-          <i className="fa fa-whatsapp"></i>
+          <i className="fab fa-whatsapp"></i>
         </a>
       </div>
     </>

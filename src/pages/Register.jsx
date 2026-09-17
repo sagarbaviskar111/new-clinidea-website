@@ -299,7 +299,7 @@ const Register = () => {
               className="btn w-100 py-3 fw-bold fs-5 mb-3" 
               style={{ borderRadius: '12px', border: '2px solid #25D366', color: '#25D366', background: 'transparent', transition: 'all 0.3s ease' }}
             >
-              Say Hi on WhatsApp <i className="fa fa-whatsapp ms-2"></i>
+              Say Hi on WhatsApp <i className="fab fa-whatsapp ms-2"></i>
             </button>
             <button 
               onClick={() => navigate('/login')}
