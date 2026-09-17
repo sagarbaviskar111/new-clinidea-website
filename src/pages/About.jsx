@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
-import '../styles/StudentSlider.css';
+import '../../public/css/StudentSlider.css';
 import { BASE_URL } from '../config';
 
 const About = () => {
@@ -385,42 +385,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      {/* Student Slider Section */}
-      {studentImages.length > 0 && (
-        <section className="ftco-section bg-dark py-5">
-          <div className="container">
-            <div className="text-center mb-5">
-              <h2 style={{ color: '#fff', fontWeight: '700' }}>Happy Students & Feedback</h2>
-              <p style={{ color: 'var(--color-text-muted)' }}>Real success stories from our students 🚀</p>
-            </div>
-            <Swiper
-              modules={[Autoplay]}
-              spaceBetween={25}
-              slidesPerView={3}
-              loop={true}
-              speed={1200}
-              autoplay={{ delay: 2000, disableOnInteraction: false }}
-              breakpoints={{
-                0: { slidesPerView: 1 },
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
-              }}
-              style={{ paddingBottom: '30px' }}
-            >
-              {studentImages.map((img, index) => (
-                <SwiperSlide key={index}>
-                  <div className="student-card">
-                    <img loading="lazy" src={img} alt={`student-${index}`} />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </section>
-      )}
-
-      {/* Footer */}
 
     </div>
   );
