@@ -148,6 +148,11 @@ const StudentPayments = ({ payments, fetchDashboardData }) => {
                             <span className="badge bg-warning text-dark">Pending</span>
                           )}
                         </div>
+                        {pay.feeAmount > 0 && (
+                          <div className="text-muted small">
+                            Includes ₹{pay.feeAmount} installment fee (₹{pay.amount - pay.feeAmount} installment + ₹{pay.feeAmount} fee)
+                          </div>
+                        )}
                         <div className="text-muted small fw-bold">{pay.courseName}</div>
                         {pay.paymentStatus === 'paid' ? (
                           <div className="small text-muted mt-1">Paid on: {new Date(pay.paymentDate).toLocaleDateString()} via {pay.paymentMethod || 'Online'}</div>

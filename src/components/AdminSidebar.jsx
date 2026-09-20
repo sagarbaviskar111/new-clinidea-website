@@ -7,7 +7,9 @@ const websiteLinks = [
   { path: '/admin/review-videos', label: 'Review videos', icon: 'fa-play-circle' },
   { path: '/admin/testimonials', label: 'Student reviews', icon: 'fa-quote-left' },
   { path: '/admin/placements', label: 'Placement records', icon: 'fa-trophy' },
-  { path: '/admin/events', label: 'Events', icon: 'fa-calendar' }
+  { path: '/admin/events', label: 'Events', icon: 'fa-calendar' },
+  { path: '/admin/blogs', label: 'Blogs', icon: 'fa-newspaper-o' },
+  { path: '/admin/coupons', label: 'Coupons', icon: 'fa-ticket' }
 ];
 
 const primaryLinks = [

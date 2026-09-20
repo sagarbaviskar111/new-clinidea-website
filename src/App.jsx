@@ -26,6 +26,7 @@ const AdminEnrollments = lazy(() => import('./pages/AdminEnrollments'));
 const AdminEvents = lazy(() => import('./pages/AdminEvents'));
 const AdminFinance = lazy(() => import('./pages/AdminFinance'));
 const AdminBlogs = lazy(() => import('./pages/AdminBlogs'));
+const AdminCoupons = lazy(() => import('./pages/AdminCoupons'));
 const AdminTestimonials = lazy(() => import('./pages/AdminTestimonials'));
 const AdminPlacements = lazy(() => import('./pages/AdminPlacements'));
 const AdminReviewVideos = lazy(() => import('./pages/AdminReviewVideos'));
@@ -115,6 +116,7 @@ function App() {
           <Route path="/admin/events" element={<AdminRoute><AdminEvents /></AdminRoute>} />
           <Route path="/admin/finance" element={<AdminRoute><AdminFinance /></AdminRoute>} />
           <Route path="/admin/blogs" element={<AdminRoute><AdminBlogs /></AdminRoute>} />
+          <Route path="/admin/coupons" element={<AdminRoute><AdminCoupons /></AdminRoute>} />
           <Route path="/admin/testimonials" element={<AdminRoute><AdminTestimonials /></AdminRoute>} />
           <Route path="/admin/placements" element={<AdminRoute><AdminPlacements /></AdminRoute>} />
           <Route path="/admin/review-videos" element={<AdminRoute><AdminReviewVideos /></AdminRoute>} />

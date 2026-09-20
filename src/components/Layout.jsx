@@ -15,7 +15,6 @@ const Layout = ({ children }) => {
     path.startsWith('/live') ||
     path.startsWith('/login') ||
     path.startsWith('/student/login') ||
-    path.startsWith('/register') ||
     path.startsWith('/enroll');
 
   return (

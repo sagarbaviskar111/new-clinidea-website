@@ -46,15 +46,6 @@ const CourseCTAs = ({ courseData, courseName, variant = 'default' }) => {
     navigate(courseName ? `/register?course=${encodeURIComponent(courseName)}` : '/register');
   };
 
-  const handleEnroll = () => {
-    const courseQuery = courseName ? `?course=${encodeURIComponent(courseName)}` : '';
-    const token = localStorage.getItem('userToken');
-    if (!token) {
-      navigate(`/login?redirect=${encodeURIComponent('/enroll' + courseQuery)}`);
-    } else {
-      navigate(`/enroll${courseQuery}`);
-    }
-  };
 
   return (
     <>
@@ -138,12 +129,6 @@ const CourseCTAs = ({ courseData, courseName, variant = 'default' }) => {
           </button>
           <button onClick={handleRegister} className={isHero ? "glass-btn" : "cr-btn cr-btn-accent"} style={(isHero || isBottom) ? {width: 'auto', minWidth: '220px'} : {}}>
             <span className="cr-btn-icon">📝</span> Register Now
-          </button>
-          <button onClick={handleEnroll} className={isHero ? "glass-btn" : "cr-btn cr-btn-accent"} style={(isHero || isBottom) ? {width: 'auto', minWidth: '220px'} : {}}>
-            <span className="cr-btn-icon">🚀</span> Enroll Now
-          </button>
-          <button onClick={() => window.dispatchEvent(new CustomEvent('open-enquiry-modal', { detail: { course: courseName } }))} className={isHero ? "glass-btn" : "cr-btn cr-btn-accent"} style={(isHero || isBottom) ? {width: 'auto', minWidth: '220px'} : {}}>
-            <span className="cr-btn-icon">❓</span> Enquiry Now
           </button>
         </div>
       </div>
