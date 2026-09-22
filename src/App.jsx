@@ -27,6 +27,7 @@ const AdminEvents = lazy(() => import('./pages/AdminEvents'));
 const AdminFinance = lazy(() => import('./pages/AdminFinance'));
 const AdminBlogs = lazy(() => import('./pages/AdminBlogs'));
 const AdminCoupons = lazy(() => import('./pages/AdminCoupons'));
+const AdminStudentPortfolios = lazy(() => import('./pages/AdminStudentPortfolios'));
 const AdminTestimonials = lazy(() => import('./pages/AdminTestimonials'));
 const AdminPlacements = lazy(() => import('./pages/AdminPlacements'));
 const AdminReviewVideos = lazy(() => import('./pages/AdminReviewVideos'));
@@ -44,6 +45,8 @@ const AdminReports = lazy(() => import('./pages/AdminReports'));
 const AdminCertificates = lazy(() => import('./pages/AdminCertificates'));
 const StudentLMS = lazy(() => import('./pages/StudentLMS'));
 const Register = lazy(() => import('./pages/Register'));
+const StudentPortfolioEdit = lazy(() => import('./pages/StudentPortfolioEdit'));
+const PublicStudentPortfolio = lazy(() => import('./pages/PublicStudentPortfolio'));
 const Login = lazy(() => import('./pages/Login'));
 const StudentDashboard = lazy(() => import('./pages/StudentDashboard'));
 const ContentPlayer = lazy(() => import('./pages/ContentPlayer'));
@@ -117,6 +120,7 @@ function App() {
           <Route path="/admin/finance" element={<AdminRoute><AdminFinance /></AdminRoute>} />
           <Route path="/admin/blogs" element={<AdminRoute><AdminBlogs /></AdminRoute>} />
           <Route path="/admin/coupons" element={<AdminRoute><AdminCoupons /></AdminRoute>} />
+          <Route path="/admin/student-portfolios" element={<AdminRoute><AdminStudentPortfolios /></AdminRoute>} />
           <Route path="/admin/testimonials" element={<AdminRoute><AdminTestimonials /></AdminRoute>} />
           <Route path="/admin/placements" element={<AdminRoute><AdminPlacements /></AdminRoute>} />
           <Route path="/admin/review-videos" element={<AdminRoute><AdminReviewVideos /></AdminRoute>} />
@@ -146,6 +150,8 @@ function App() {
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/student/lms" element={<ProtectedRoute><Navigate to="/dashboard" replace /></ProtectedRoute>} />
           <Route path="/register" element={<Register />} />
+          <Route path="/student/portfolio" element={<ProtectedRoute><StudentPortfolioEdit /></ProtectedRoute>} />
+          <Route path="/student-portfolio/:studentId" element={<PublicStudentPortfolio />} />
           <Route path="/login" element={<Login />} />
           <Route path="/student/Login" element={<Login />} />
           <Route path="/student/login" element={<Login />} />

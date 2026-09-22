@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [lastPathname, setLastPathname] = useState(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -14,10 +15,12 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [location.pathname]);
+  // Close mobile menu on route change — adjusted during render (React's recommended
+  // pattern for this) instead of an effect, to avoid an extra cascading render.
+  if (location.pathname !== lastPathname) {
+    setLastPathname(location.pathname);
+    if (mobileMenuOpen) setMobileMenuOpen(false);
+  }
 
   return (
     <>
@@ -49,13 +52,14 @@ const Navbar = () => {
         }
         .nav-links {
           display: flex;
-          gap: 2rem;
+          gap: 1.65rem;
           align-items: center;
         }
         .nav-link {
           color: var(--color-primary);
           font-weight: 600;
-          font-size: 1.05rem;
+          font-size: 1.02rem;
+          white-space: nowrap;
           text-decoration: none;
           transition: color 0.2s ease;
           position: relative;
@@ -198,9 +202,9 @@ const Navbar = () => {
           <div className={`nav-links ${mobileMenuOpen ? 'mobile-active' : ''}`}>
             <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
             <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>About Us</Link>
-            <Link to="/program" className={`nav-link ${location.pathname === '/program' || location.pathname.includes('course') || location.pathname.includes('clinical') ? 'active' : ''}`}>Courses</Link>
+            <Link to="/program" className={`nav-link ${location.pathname === '/program' || location.pathname.startsWith('/clinical-research-') ? 'active' : ''}`}>Courses</Link>
             <Link to="/events" className={`nav-link ${location.pathname === '/events' ? 'active' : ''}`}>Events</Link>
-            <Link to="/blogs" className={`nav-link ${location.pathname === '/blogs' ? 'active' : ''}`}>Blogs</Link>
+            <Link to="/blogs" className={`nav-link ${location.pathname.startsWith('/blogs') ? 'active' : ''}`}>Blogs</Link>
             <Link to="/placements" className={`nav-link ${location.pathname === '/placements' ? 'active' : ''}`}>Placements</Link>
             <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>Contact</Link>
           </div>

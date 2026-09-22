@@ -153,21 +153,22 @@ const AdminStudents = () => {
 
   // Filter Logic
   const filteredStudents = students.filter(student => {
-    const searchMatch = student.fullName.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                        student.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                        student.phone.includes(searchTerm);
-    
-    const statusMatch = statusFilter === '' || student.status.toLowerCase() === statusFilter.toLowerCase();
-    
+    const searchMatch = (student.fullName || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        (student.email || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        (student.phone || '').includes(searchTerm) ||
+                        (student.studentId || '').toLowerCase().includes(searchTerm.toLowerCase());
+
+    const statusMatch = statusFilter === '' || (student.status || '').toLowerCase() === statusFilter.toLowerCase();
+
     // Enrollment is dynamically mapped (latest enrollment determines status)
     let latestEnrollmentStatus = '';
     if(student.enrollments && student.enrollments.length > 0) {
-      latestEnrollmentStatus = student.enrollments[0].enrollmentStatus.toLowerCase();
+      latestEnrollmentStatus = (student.enrollments[0].enrollmentStatus || '').toLowerCase();
     } else {
       latestEnrollmentStatus = 'none';
     }
     const enrollMatch = enrollFilter === '' || latestEnrollmentStatus === enrollFilter.toLowerCase();
-    
+
     return searchMatch && statusMatch && enrollMatch;
   });
 
@@ -223,6 +224,7 @@ const AdminStudents = () => {
                 <thead className="bg-light">
                   <tr>
                     <th className="py-3 px-4">Student Profile</th>
+                    <th>Student ID</th>
                     <th>Contact Loop</th>
                     <th>Highest Qualification</th>
                     <th>Active Course Vector</th>
@@ -237,7 +239,23 @@ const AdminStudents = () => {
                     <tr key={student.id}>
                       <td className="py-3 px-4">
                          <span className="fw-bold d-block text-dark">{student.fullName}</span>
-                         <span className="badge bg-secondary" style={{ fontSize: '10px' }}>ID: CLN-{student.id}</span>
+                      </td>
+                      <td>
+                         {student.studentId ? (
+                           <div className="d-flex flex-column align-items-start gap-1">
+                             <span className="badge bg-primary" style={{ fontSize: '11px' }}>{student.studentId}</span>
+                             <a
+                               href={`/student-portfolio/${student.studentId}`}
+                               target="_blank"
+                               rel="noreferrer"
+                               className="small fw-bold text-decoration-none"
+                             >
+                               View Portfolio <i className="fa fa-arrow-up-right-from-square ms-1"></i>
+                             </a>
+                           </div>
+                         ) : (
+                           <span className="text-muted small">Not assigned</span>
+                         )}
                       </td>
                       <td>
                          <span className="d-block small text-muted"><i className="fa fa-envelope me-1"></i> {student.email}</span>
@@ -259,11 +277,11 @@ const AdminStudents = () => {
                       <td>
                         <div className="d-flex flex-column gap-1 align-items-start">
                           <span className={`badge ${student.status === 'active' ? 'bg-success' : 'bg-danger'}`}>
-                            {student.status.toUpperCase()}
+                            {(student.status || 'unknown').toUpperCase()}
                           </span>
                           {latestEnrollment && (
                             <span className={`badge border ${latestEnrollment.enrollmentStatus === 'confirmed' ? 'border-primary text-primary' : 'border-warning text-warning'}`}>
-                              {latestEnrollment.enrollmentStatus.toUpperCase()} BOOKING
+                              {(latestEnrollment.enrollmentStatus || 'unknown').toUpperCase()} BOOKING
                             </span>
                           )}
                         </div>
@@ -280,7 +298,7 @@ const AdminStudents = () => {
                     )
                   })}
                   {filteredStudents.length === 0 && (
-                     <tr><td colSpan="6" className="text-center py-5">No active profiles matching parameters in SQLite.</td></tr>
+                     <tr><td colSpan="7" className="text-center py-5">No active profiles matching parameters in SQLite.</td></tr>
                   )}
                 </tbody>
               </table>
@@ -310,7 +328,15 @@ const AdminStudents = () => {
             <h5 className="fw-bold mb-0 text-dark fs-5">{selectedStudent.fullName}</h5>
             <p className="mb-1 text-muted"><a href={`mailto:${selectedStudent.email}`}>{selectedStudent.email}</a></p>
             <p className="mb-2"><i className="fa fa-phone me-2 text-success"></i><a href={`tel:${selectedStudent.phone}`}>{selectedStudent.phone}</a></p>
-            
+            {selectedStudent.studentId && (
+              <p className="mb-2">
+                <span className="badge bg-primary me-2">{selectedStudent.studentId}</span>
+                <a href={`/student-portfolio/${selectedStudent.studentId}`} target="_blank" rel="noreferrer" className="small fw-bold text-decoration-none">
+                  View Public Portfolio <i className="fa fa-arrow-up-right-from-square ms-1"></i>
+                </a>
+              </p>
+            )}
+
             <hr className="my-2" />
             
             <details className="mt-3">

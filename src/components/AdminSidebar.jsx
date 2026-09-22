@@ -9,7 +9,8 @@ const websiteLinks = [
   { path: '/admin/placements', label: 'Placement records', icon: 'fa-trophy' },
   { path: '/admin/events', label: 'Events', icon: 'fa-calendar' },
   { path: '/admin/blogs', label: 'Blogs', icon: 'fa-newspaper-o' },
-  { path: '/admin/coupons', label: 'Coupons', icon: 'fa-ticket' }
+  { path: '/admin/coupons', label: 'Coupons', icon: 'fa-ticket' },
+  { path: '/admin/student-portfolios', label: 'Student Portfolios', icon: 'fa-id-card' }
 ];
 
 const primaryLinks = [

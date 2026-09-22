@@ -122,6 +122,7 @@ const Footer = () => {
                 <li><Link to="/placements">Placements</Link></li>
                 <li><Link to="/events">Events</Link></li>
                 <li><Link to="/blogs">Blogs</Link></li>
+                <li><Link to="/student/portfolio">Student Portfolio</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
               </ul>
             </div>
@@ -158,11 +159,7 @@ const Footer = () => {
                   </span>
                 </li>
               </ul>
-              <div style={{ marginTop: '1.5rem' }}>
-                <Link to="/login" className="newsletter-btn" style={{ textDecoration: 'none', display: 'inline-block', textAlign: 'center', backgroundColor: '#ffffff', color: 'var(--color-primary)' }}>
-                  <i className="fa fa-user-graduate" style={{ marginRight: '8px' }}></i> LMS Login
-                </Link>
-              </div>
+              {/* LMS Login temporarily hidden per request */}
             </div>
             
             <div className="footer-col">

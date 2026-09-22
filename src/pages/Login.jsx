@@ -9,6 +9,7 @@ const Login = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const redirectPath = searchParams.get('redirect') || '/dashboard';
+  const isPortfolioRedirect = redirectPath.startsWith('/student/portfolio');
   const [formData, setFormData] = useState({
     identifier: '',
     password: ''
@@ -54,9 +55,9 @@ const Login = () => {
         <title>Student Login | Clinidea Education</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
-      <AuthLayout 
-        title="Student Login" 
-        subtitle="Welcome back to your educational journey" 
+      <AuthLayout
+        title={isPortfolioRedirect ? "Login to Your Portfolio" : "Student Login"}
+        subtitle={isPortfolioRedirect ? "Sign in to edit your public Student Portfolio" : "Welcome back to your educational journey"}
         role="student"
       >
         {error && <div className="alert alert-danger p-3 text-center fw-bold">{error}</div>}
@@ -90,7 +91,7 @@ const Login = () => {
             className="btn w-100 clinidea-auth__submit"
             disabled={loading}
           >
-            {loading ? 'Signing you in...' : <>Sign in to dashboard <i className="fa fa-arrow-right ms-2" /></>}
+            {loading ? 'Signing you in...' : <>{isPortfolioRedirect ? 'Sign in to your portfolio' : 'Sign in to dashboard'} <i className="fa fa-arrow-right ms-2" /></>}
           </button>
         </form>
         <div className="text-center mt-4">

@@ -57,6 +57,17 @@ const LiveFacialCapture = ({ onCapture, capturedUrl, uploading }) => {
 
   useEffect(() => () => stopCamera(), []);
 
+  // The <video> element only exists in the DOM once cameraOn is true, so the stream
+  // must be attached here (after that render), not inside startCamera() — attaching
+  // it there hits a still-null ref and silently no-ops, leaving the video black.
+  useEffect(() => {
+    if (cameraOn && videoRef.current && streamRef.current) {
+      videoRef.current.srcObject = streamRef.current;
+      videoRef.current.play().catch(() => {});
+      startDetectionLoop();
+    }
+  }, [cameraOn]);
+
   const startDetectionLoop = () => {
     detectionIntervalRef.current = setInterval(async () => {
       if (!videoRef.current || videoRef.current.readyState < 2) return;
@@ -81,12 +92,7 @@ const LiveFacialCapture = ({ onCapture, capturedUrl, uploading }) => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } });
       streamRef.current = stream;
-      if (videoRef.current) {
-        videoRef.current.srcObject = stream;
-        await videoRef.current.play();
-      }
       setCameraOn(true);
-      startDetectionLoop();
     } catch (err) {
       const messages = {
         NotAllowedError: 'Camera permission was denied. Click the camera/lock icon in your browser\'s address bar, allow camera access for this site, then try again.',
