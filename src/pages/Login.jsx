@@ -8,7 +8,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const redirectPath = searchParams.get('redirect') || '/dashboard';
+  const redirectPath = searchParams.get('redirect') || '/student/portfolio';
   const isPortfolioRedirect = redirectPath.startsWith('/student/portfolio');
   const [formData, setFormData] = useState({
     identifier: '',

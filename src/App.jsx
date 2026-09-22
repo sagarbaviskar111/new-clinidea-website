@@ -43,13 +43,10 @@ const AdminMentorManagement = lazy(() => import('./pages/AdminMentorManagement')
 const AdminCoordinatorManagement = lazy(() => import('./pages/AdminCoordinatorManagement'));
 const AdminReports = lazy(() => import('./pages/AdminReports'));
 const AdminCertificates = lazy(() => import('./pages/AdminCertificates'));
-const StudentLMS = lazy(() => import('./pages/StudentLMS'));
 const Register = lazy(() => import('./pages/Register'));
 const StudentPortfolioEdit = lazy(() => import('./pages/StudentPortfolioEdit'));
 const PublicStudentPortfolio = lazy(() => import('./pages/PublicStudentPortfolio'));
 const Login = lazy(() => import('./pages/Login'));
-const StudentDashboard = lazy(() => import('./pages/StudentDashboard'));
-const ContentPlayer = lazy(() => import('./pages/ContentPlayer'));
 const EnrollmentForm = lazy(() => import('./pages/EnrollmentForm'));
 const MentorLogin = lazy(() => import('./pages/MentorLogin'));
 const MentorDashboard = lazy(() => import('./pages/MentorDashboard'));
@@ -148,7 +145,6 @@ function App() {
           <Route path="/unauthorized" element={<Unauthorized />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="/student/lms" element={<ProtectedRoute><Navigate to="/dashboard" replace /></ProtectedRoute>} />
           <Route path="/register" element={<Register />} />
           <Route path="/student/portfolio" element={<ProtectedRoute><StudentPortfolioEdit /></ProtectedRoute>} />
           <Route path="/student-portfolio/:studentId" element={<PublicStudentPortfolio />} />
@@ -157,8 +153,6 @@ function App() {
           <Route path="/student/login" element={<Login />} />
           <Route path="/register-instructions" element={<ProtectedRoute><RegisterInstructions /></ProtectedRoute>} />
           <Route path="/enroll" element={<ProtectedRoute><EnrollmentForm /></ProtectedRoute>} />
-          <Route path="/dashboard" element={<ProtectedRoute><StudentDashboard /></ProtectedRoute>} />
-          <Route path="/watch" element={<ProtectedRoute><ContentPlayer /></ProtectedRoute>} />
         </Routes>
         </Layout>
       </Suspense>

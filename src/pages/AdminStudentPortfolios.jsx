@@ -33,8 +33,16 @@ const AdminStudentPortfolios = () => {
   const [credError, setCredError] = useState(null);
 
   const [deletingId, setDeletingId] = useState(null);
+  const [courseOptions, setCourseOptions] = useState([]);
 
   const token = () => localStorage.getItem('adminToken');
+
+  useEffect(() => {
+    fetch(`${BASE_URL}/api/courses`)
+      .then(res => res.json())
+      .then(list => setCourseOptions(Array.isArray(list) ? list : []))
+      .catch(() => setCourseOptions([]));
+  }, []);
 
   const fetchStudents = () => {
     const t = token();
@@ -339,7 +347,12 @@ const AdminStudentPortfolios = () => {
               </div>
               <div className="mb-2">
                 <label className="form-label small fw-bold">Registered Course</label>
-                <input className="form-control" value={createForm.registeredCourse} onChange={(e) => setCreateForm(p => ({ ...p, registeredCourse: e.target.value }))} />
+                <select className="form-select" value={createForm.registeredCourse} onChange={(e) => setCreateForm(p => ({ ...p, registeredCourse: e.target.value }))}>
+                  <option value="">-- Select a Course --</option>
+                  {courseOptions.map(c => (
+                    <option key={c.id || c._id || c.name} value={c.name}>{c.name}</option>
+                  ))}
+                </select>
               </div>
               <div className="mb-3">
                 <label className="form-label small fw-bold">Student ID <span className="text-muted">(optional — auto-generated if left blank)</span></label>
@@ -378,7 +391,15 @@ const AdminStudentPortfolios = () => {
                   <div className="row g-2 mb-2">
                     <div className="col-md-6">
                       <label className="form-label small fw-bold">Registered Course</label>
-                      <input className="form-control" value={editForm.registeredCourse} onChange={(e) => setEditForm(p => ({ ...p, registeredCourse: e.target.value }))} />
+                      <select className="form-select" value={editForm.registeredCourse} onChange={(e) => setEditForm(p => ({ ...p, registeredCourse: e.target.value }))}>
+                        <option value="">-- Select a Course --</option>
+                        {courseOptions.map(c => (
+                          <option key={c.id || c._id || c.name} value={c.name}>{c.name}</option>
+                        ))}
+                        {editForm.registeredCourse && !courseOptions.some(c => c.name === editForm.registeredCourse) && (
+                          <option value={editForm.registeredCourse}>{editForm.registeredCourse}</option>
+                        )}
+                      </select>
                     </div>
                     <div className="col-md-6">
                       <label className="form-label small fw-bold">Status</label>

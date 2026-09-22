@@ -444,7 +444,7 @@ const EnrollmentForm = () => {
                   </div>
 
                   <div className="mt-4">
-                    <button onClick={() => navigate('/dashboard')} className="btn btn-primary px-5 py-3 fw-bold rounded-pill shadow-lg">Go to Student Dashboard <i className="fa fa-arrow-right ms-1"></i></button>
+                    <button onClick={() => navigate('/student/portfolio')} className="btn btn-primary px-5 py-3 fw-bold rounded-pill shadow-lg">Go to My Portfolio <i className="fa fa-arrow-right ms-1"></i></button>
                   </div>
                 </div>
               )}
